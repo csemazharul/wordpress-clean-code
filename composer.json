@@ -1,0 +1,38 @@
+{
+    "name": "clean/code",
+    "description": "Wordpress Clean Code",
+    "license": "gpl-2",
+    "autoload": {
+        "psr-4": {
+            "Clean\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md Mazharul Islam",
+            "email": "54615735+csemazharul@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "sirbrillig/phpcs-variable-analysis": "*",
+        "friendsofphp/php-cs-fixer": "^3.11",
+        "wp-coding-standards/wpcs": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+	},
+
+    "scripts": {
+        "package-list": "phpcs -i",
+        "version": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.6-8.1",
+        "unused-variables": "phpcs -p --standard=VariableAnalysis",
+        "wp-check-error": [
+            "phpcs -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis"
+          ],
+        "wp-code-fix": [
+            "phpcbf -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis"
+          ],
+          "fix-all": "php-cs-fixer fix src",
+          "fix": "php-cs-fixer fix"
+      }
+}
