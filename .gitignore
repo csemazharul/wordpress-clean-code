@@ -1,0 +1,5 @@
+.tmp.drivedownload
+.idea
+/vendor/*
+composer.lock
+
