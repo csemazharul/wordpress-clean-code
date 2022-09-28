@@ -24,13 +24,13 @@
 
     "scripts": {
         "package-list": "phpcs -i",
-        "version": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.6-8.1",
-        "unused-variables": "phpcs -p --standard=VariableAnalysis",
+        "version": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.6-8.1 src",
+        "unused-variables": "phpcs -p --standard=VariableAnalysis src",
         "wp-check-error": [
-            "phpcs -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis"
+            "phpcs -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis src"
           ],
         "wp-code-fix": [
-            "phpcbf -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis"
+            "phpcbf -p --standard=WordPress,WordPress-Extra,WordPress-Docs,WordPress-Core,VariableAnalysis src"
           ],
           "fix-all": "php-cs-fixer fix src",
           "fix": "php-cs-fixer fix"
